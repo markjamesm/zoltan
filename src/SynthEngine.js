@@ -9,7 +9,7 @@ function SynthEngine() {
     <>
       <Song isPlaying={isPlaying}>
         <Track steps={['C3', 'E3', 'G3', null]}>
-          <Instrument type="synth" />
+          <Instrument type="polysynth" />
         </Track>
       </Song>
       <button

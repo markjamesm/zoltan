@@ -21,9 +21,6 @@ function App() {
         <Col>
           <SynthEngine></SynthEngine>
         </Col>
-        <Col>
-          <br />
-        </Col>
       </Row>
     </div>
   );
