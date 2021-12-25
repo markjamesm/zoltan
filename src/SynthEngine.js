@@ -34,6 +34,7 @@ function SynthEngine() {
           volume={volume}
         >
           <Instrument type={synthType} />
+          
           <Effect type="feedbackDelay" wet={delayAmount} />
           <Effect type="distortion" wet={distortionAmount} />
         </Track>
@@ -121,8 +122,6 @@ function SynthEngine() {
         <br />
         <br />
 
-      </Stack>
-      <Stack alignItems="center" className='CenterAlign'>
       </Stack>
     </>
   );
