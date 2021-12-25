@@ -12,6 +12,7 @@ Note: Audio doesn't work on iOS at the moment due to [an issue](https://github.c
 * [Reactronica](https://reactronica.com/) - An awesome library which “aims to treat music as a function of state, rendering sound instead of UI.”
 * [Material UI](https://mui.com/) - For component UI design.
 * [React Dial Knob](https://www.npmjs.com/package/react-dial-knob) - A great component to model synth knobs with.
+* [React Bootstrap](https://react-bootstrap.github.io/) - For using Bootstrap with React syntax.
 * [Styled Components](https://www.styled-components.com/) - For writing CSS from within Javascript.
 
 
