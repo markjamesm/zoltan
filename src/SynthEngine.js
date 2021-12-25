@@ -43,7 +43,7 @@ function SynthEngine() {
 
           <Effect type="tremolo" wet={tremoloAmount} />
           <Effect type="distortion" wet={distortionAmount} />
-          <Effect type="reverb" wet={reverbAmount} />
+          <Effect type="freeverb" wet={reverbAmount} />
           <Effect type="feedbackDelay" wet={delayAmount} />
           <Effect type="autoFilter" wet={autoFilterAmount} />
         </Track>
