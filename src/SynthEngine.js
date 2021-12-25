@@ -19,17 +19,17 @@ function SynthEngine() {
   const [autoFilterAmount, setAutoFilterAmount] = useState(0)
   const [tremoloAmount, setTremoloAmount] = useState(0)
   const [steps] = useState([
-    ['C3', 'E3', 'A3'],
+    ['B2', 'A3', 'D4'],
     null,
-    ['C3', 'E3', 'G3', 'B3'],
+    ['F#2', 'E3', 'A3'],
     null,
-    ['C3', 'F3', 'A3'],
+    ['B2', 'A3', 'D4'],
     null,
-    ['D3', 'G3', 'B3'],
+    ['F#2', 'E3', 'A3'],
     null,
   ]);
   const [oscillatorType, setOscillatorType] = useState('sine')
-  const [synthType, setSynthType] = useState('amSynth')
+  const [synthType, setSynthType] = useState('fmSynth')
 
   return (
     <>
@@ -152,7 +152,7 @@ function SynthEngine() {
           <FormLabel component="legend">Synth Engine</FormLabel>
           <RadioGroup
             aria-label="synth-engine"
-            defaultValue="amSynth"
+            defaultValue="fmSynth"
             name="radio-buttons-group"
           >
             <FormControlLabel value="amSynth" control={<Radio onClick={() => setSynthType('amSynth')} />} label="amSynth" />
