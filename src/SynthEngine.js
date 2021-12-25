@@ -10,7 +10,7 @@ import Radio from '@mui/material/Radio';
 
 function SynthEngine() {
 
-  { /* Declare state variables */}
+  /* Declare state variables */
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [volume, setVolume] = useState(0)
   const [delayAmount, setDelayAmount] = useState(0)
@@ -40,7 +40,7 @@ function SynthEngine() {
         >
           <Instrument type={synthType} oscillator = {oscillatorType} />
 
-          { /* Setup the effect chain */}
+          {/* Setup the effect chain */}
           <Effect type="tremolo" wet={tremoloAmount} />
           <Effect type="distortion" wet={distortionAmount} />
           <Effect type="freeverb" wet={reverbAmount} />
