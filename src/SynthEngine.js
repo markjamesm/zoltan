@@ -14,6 +14,9 @@ function SynthEngine() {
   const [volume, setVolume] = useState(0)
   const [delayAmount, setDelayAmount] = useState(0)
   const [distortionAmount, setDistortion] = useState(0)
+  const [reverbAmount, setReverbAmount] = useState(0)
+  const [autoFilterAmount, setAutoFilterAmount] = useState(0)
+  const [tremoloAmount, setTremoloAmount] = useState(0)
   const [steps] = useState([
     ['C3', 'E3', 'A3'],
     null,
@@ -34,41 +37,30 @@ function SynthEngine() {
           volume={volume}
         >
           <Instrument type={synthType} />
-          
-          <Effect type="feedbackDelay" wet={delayAmount} />
+
+          <Effect type="tremolo" wet={tremoloAmount} />
           <Effect type="distortion" wet={distortionAmount} />
+          <Effect type="reverb" wet={reverbAmount} />
+          <Effect type="feedbackDelay" wet={delayAmount} />
+          <Effect type="autoFilter" wet={autoFilterAmount} />
         </Track>
       </Song>
 
       <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='CenterAlign'>
-        <Donut
-          diameter={100}
-          min={-50}
-          max={10}
-          step={1}
-          value={volume}
-          theme={{
-            donutColor: 'blue'
-          }}
-          onValueChange={setVolume}
-          ariaLabelledBy={'volume'}
-        >
-          <label id={'volume'}>Volume</label>
-        </Donut>
-
-        <Donut
+           
+      <Donut
           diameter={100}
           min={0}
           max={1}
           step={.25}
-          value={delayAmount}
+          value={tremoloAmount}
           theme={{
-            donutColor: 'purple'
+            donutColor: 'darkred'
           }}
-          onValueChange={setDelayAmount}
-          ariaLabelledBy={'delay-amount'}
+          onValueChange={setTremoloAmount}
+          ariaLabelledBy={'tremolo-amount'}
         >
-          <label id={'delay-amount'}>Delay Amount</label>
+          <label id={'tremolo-amount'}>Tremolo</label>
         </Donut>
 
         <Donut
@@ -84,6 +76,69 @@ function SynthEngine() {
           ariaLabelledBy={'delay-amount'}
         >
           <label id={'delay-amount'}>Distortion</label>
+        </Donut>
+        
+        <Donut
+          diameter={100}
+          min={0}
+          max={1}
+          step={.25}
+          value={delayAmount}
+          theme={{
+            donutColor: 'purple'
+          }}
+          onValueChange={setDelayAmount}
+          ariaLabelledBy={'delay-amount'}
+        >
+          <label id={'delay-amount'}>Delay</label>
+        </Donut>
+      </Stack>
+
+      <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='CenterAlign'>
+
+      <Donut
+          diameter={100}
+          min={0}
+          max={1}
+          step={.25}
+          value={reverbAmount}
+          theme={{
+            donutColor: 'orange'
+          }}
+          onValueChange={setReverbAmount}
+          ariaLabelledBy={'reverb'}
+        >
+          <label id={'reverb'}>Reverb</label>
+        </Donut>
+
+        <Donut
+          diameter={100}
+          min={0}
+          max={1}
+          step={.25}
+          value={autoFilterAmount}
+          theme={{
+            donutColor: 'green'
+          }}
+          onValueChange={setAutoFilterAmount}
+          ariaLabelledBy={'delay-amount'}
+        >
+          <label id={'delay-amount'}>AutoFilter</label>
+        </Donut>
+
+        <Donut
+          diameter={100}
+          min={-50}
+          max={10}
+          step={1}
+          value={volume}
+          theme={{
+            donutColor: 'blue'
+          }}
+          onValueChange={setVolume}
+          ariaLabelledBy={'volume'}
+        >
+          <label id={'volume'}>Volume</label>
         </Donut>
       </Stack>
 
