@@ -1,10 +1,10 @@
 # Zoltan
 
-Zoltan is a polyphonic browser-based synthesizer written in Javascript using the [reactronica](https://github.com/unkleho/reactronica) library. The project is currently in the early alpha stages, so expect breaking changes to be frequent. You can try the [live demo here]() which is built from the master branch.
+Zoltan is a polyphonic browser-based synthesizer written in Javascript using the [reactronica](https://github.com/unkleho/reactronica) library. The project is currently in the early alpha stages, so expect breaking changes to be frequent. Note: currently doesn't work on iOS due to [a bug](https://github.com/markjamesm/zoltan/issues/3).
 
-## Screenshot
+## Live Demo
 
-![Zoltan music Synthesizer screenshot](/screenshot.jpg)
+You can try the [live demo here](https://dreamy-meitner-5c7e1c.netlify.app/) which is built from the master branch.
 
 ## Libraries Used
 * Reactronic
