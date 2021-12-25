@@ -85,10 +85,11 @@ function SynthEngine() {
           <label id={'delay-amount'}>Distortion</label>
         </Donut>
       </Stack>
+      
       <br />
       <br />
 
-      <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='CenterAlign'>
+      <Stack alignItems="center" className='CenterAlign'>
         <FormControl component="fieldset">
           <FormLabel component="legend">Synth Engine</FormLabel>
           <RadioGroup
@@ -101,19 +102,27 @@ function SynthEngine() {
             <FormControlLabel value="monoSynth" control={<Radio onClick={() => setSynthType('monoSynth')} />} label="monoSynth" />
           </RadioGroup>
         </FormControl>
+        
+        <br />
+        
+        <button
+          style={{
+            fontSize: '2rem',
+          }}
+
+          onClick={() => {
+            setIsPlaying(!isPlaying);
+          }}
+        >
+          {isPlaying ? 'Stop' : 'Play sequence'}
+        </button>
+
+        <br />
+        <br />
 
       </Stack>
-      <button
-        style={{
-          fontSize: '2rem',
-        }}
-
-        onClick={() => {
-          setIsPlaying(!isPlaying);
-        }}
-      >
-        {isPlaying ? 'Stop' : 'Play sequence'}
-      </button>
+      <Stack alignItems="center" className='CenterAlign'>
+      </Stack>
     </>
   );
 }
