@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.css';
 import styled from 'styled-components'
-import { Col } from 'react-bootstrap';
-import Row from "react-bootstrap/Row";
 import SynthEngine from './SynthEngine';
 
 // Set the button colors using styled-components
