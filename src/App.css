@@ -25,7 +25,7 @@
   margin-bottom: 5vh;
 }
 
-.Donut {
+.CenterAlign {
   display: flex;
   flex-direction: row;
   align-items: center;

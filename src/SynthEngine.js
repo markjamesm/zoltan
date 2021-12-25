@@ -2,6 +2,11 @@ import React, { useState } from 'react'
 import { Song, Track, Instrument, Effect } from 'reactronica';
 import { Donut } from 'react-dial-knob'
 import Stack from '@mui/material/Stack';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Radio from '@mui/material/Radio';
 import { Col } from 'react-bootstrap';
 
 function SynthEngine() {
@@ -10,22 +15,33 @@ function SynthEngine() {
   const [volume, setVolume] = useState(0)
   const [delayAmount, setDelayAmount] = useState(0)
   const [distortionAmount, setDistortion] = useState(0)
+  const [steps, setSteps] = useState([
+    ['C3', 'E3', 'A3'],
+    null,
+    ['C3', 'E3', 'G3', 'B3'],
+    null,
+    ['C3', 'F3', 'A3'],
+    null,
+    ['D3', 'G3', 'B3'],
+    null,
+  ]);
+  const [synthType, setSynthType] = useState('amSynth')
 
 
   return (
     <>
       <Song isPlaying={isPlaying}>
         <Track
-          steps={[['C3', 'E3', 'G3'], ['G3', 'B4', 'D4']]}
+          steps={steps}
           volume={volume}
         >
-          <Instrument type="synth" />
+          <Instrument type={synthType} />
           <Effect type="feedbackDelay" wet={delayAmount} />
           <Effect type="distortion" wet={distortionAmount} />
         </Track>
       </Song>
 
-      <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='Donut'>
+      <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='CenterAlign'>
         <Donut
           diameter={100}
           min={-50}
@@ -71,8 +87,24 @@ function SynthEngine() {
           <label id={'delay-amount'}>Distortion</label>
         </Donut>
       </Stack>
-          <br />
-          <br />
+      <br />
+      <br />
+
+      <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='CenterAlign'>
+        <FormControl component="fieldset">
+          <FormLabel component="legend">Synth Engine</FormLabel>
+          <RadioGroup
+            aria-label="synth-engine"
+            defaultValue="amSynth"
+            name="radio-buttons-group"
+          >
+            <FormControlLabel value="amSynth" control={<Radio onClick={() => setSynthType('monoSynth')} />} label="amSynth" />
+            <FormControlLabel value="fmSynth" control={<Radio onClick={() => setSynthType('fmSynth')} />} label="fmSynth" />
+            <FormControlLabel value="monoSynth" control={<Radio onClick={() => setSynthType('monoSynth')} />} label="monoSynth" />
+          </RadioGroup>
+        </FormControl>
+
+      </Stack>
       <button
         style={{
           fontSize: '2rem',
