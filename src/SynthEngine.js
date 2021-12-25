@@ -26,7 +26,6 @@ function SynthEngine() {
   ]);
   const [synthType, setSynthType] = useState('amSynth')
 
-
   return (
     <>
       <Song isPlaying={isPlaying}>

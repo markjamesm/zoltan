@@ -17,11 +17,8 @@ function App() {
         <h1>Zoltan</h1>
         <H2>A polyphonic Javascript synthesizer</H2>
       </header>
-      <Row>
-        <Col>
-          <SynthEngine></SynthEngine>
-        </Col>
-      </Row>
+      <SynthEngine>
+      </SynthEngine>
     </div>
   );
 }
