@@ -85,7 +85,7 @@ function SynthEngine() {
           <label id={'delay-amount'}>Distortion</label>
         </Donut>
       </Stack>
-      
+
       <br />
       <br />
 
@@ -102,9 +102,9 @@ function SynthEngine() {
             <FormControlLabel value="monoSynth" control={<Radio onClick={() => setSynthType('monoSynth')} />} label="monoSynth" />
           </RadioGroup>
         </FormControl>
-        
+
         <br />
-        
+
         <button
           style={{
             fontSize: '2rem',
@@ -117,6 +117,7 @@ function SynthEngine() {
           {isPlaying ? 'Stop' : 'Play sequence'}
         </button>
 
+        <br />
         <br />
         <br />
 
