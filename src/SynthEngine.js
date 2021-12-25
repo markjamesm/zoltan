@@ -7,8 +7,6 @@ import FormLabel from '@mui/material/FormLabel';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
-import Slider from '@mui/material/Slider';
-import Col from 'react-bootstrap/Col';
 
 function SynthEngine() {
 
