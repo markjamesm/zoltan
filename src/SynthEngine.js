@@ -98,7 +98,7 @@ function SynthEngine() {
             defaultValue="amSynth"
             name="radio-buttons-group"
           >
-            <FormControlLabel value="amSynth" control={<Radio onClick={() => setSynthType('monoSynth')} />} label="amSynth" />
+            <FormControlLabel value="amSynth" control={<Radio onClick={() => setSynthType('amSynth')} />} label="amSynth" />
             <FormControlLabel value="fmSynth" control={<Radio onClick={() => setSynthType('fmSynth')} />} label="fmSynth" />
             <FormControlLabel value="monoSynth" control={<Radio onClick={() => setSynthType('monoSynth')} />} label="monoSynth" />
           </RadioGroup>
