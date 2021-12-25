@@ -7,6 +7,8 @@ import FormLabel from '@mui/material/FormLabel';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
+import Slider from '@mui/material/Slider';
+import Col from 'react-bootstrap/Col';
 
 function SynthEngine() {
 
@@ -27,6 +29,7 @@ function SynthEngine() {
     ['D3', 'G3', 'B3'],
     null,
   ]);
+  const [oscillatorType, setOscillatorType] = useState('sine')
   const [synthType, setSynthType] = useState('amSynth')
 
   return (
@@ -36,7 +39,7 @@ function SynthEngine() {
           steps={steps}
           volume={volume}
         >
-          <Instrument type={synthType} />
+          <Instrument type={synthType} oscillator = {oscillatorType} />
 
           <Effect type="tremolo" wet={tremoloAmount} />
           <Effect type="distortion" wet={distortionAmount} />
@@ -47,8 +50,7 @@ function SynthEngine() {
       </Song>
 
       <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='CenterAlign'>
-           
-      <Donut
+        <Donut
           diameter={100}
           min={0}
           max={1}
@@ -77,7 +79,7 @@ function SynthEngine() {
         >
           <label id={'delay-amount'}>Distortion</label>
         </Donut>
-        
+
         <Donut
           diameter={100}
           min={0}
@@ -96,7 +98,7 @@ function SynthEngine() {
 
       <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='CenterAlign'>
 
-      <Donut
+        <Donut
           diameter={100}
           min={0}
           max={1}
@@ -145,8 +147,8 @@ function SynthEngine() {
       <br />
       <br />
 
-      <Stack alignItems="center" className='CenterAlign'>
-        <FormControl component="fieldset">
+      <Stack className='CenterAlign'>
+      <FormControl component="fieldset">
           <FormLabel component="legend">Synth Engine</FormLabel>
           <RadioGroup
             aria-label="synth-engine"
@@ -159,7 +161,21 @@ function SynthEngine() {
           </RadioGroup>
         </FormControl>
 
-        <br />
+        <FormControl component="fieldset">
+          <FormLabel component="oscillators">Oscillator Type</FormLabel>
+          <RadioGroup
+            aria-label="synth-engine"
+            defaultValue="sine"
+            name="radio-buttons-group"
+          >
+            <FormControlLabel value="sine" control={<Radio onClick={() => setOscillatorType('sine')} />} label="Sine" />
+            <FormControlLabel value="triangle" control={<Radio onClick={() => setOscillatorType('triangle')} />} label="Triangle" />
+            <FormControlLabel value="square" control={<Radio onClick={() => setOscillatorType('square')} />} label="Square" />
+          </RadioGroup>
+        </FormControl>
+      </Stack>
+
+      <Stack alignItems="center">
 
         <button
           style={{
@@ -173,6 +189,8 @@ function SynthEngine() {
           {isPlaying ? 'Stop' : 'Play sequence'}
         </button>
 
+        <br />
+        <br />
         <br />
         <br />
         <br />
