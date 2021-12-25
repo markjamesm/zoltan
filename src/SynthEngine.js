@@ -12,7 +12,7 @@ function SynthEngine() {
 
   /* Declare state variables */
   const [isPlaying, setIsPlaying] = React.useState(false);
-  const [volume, setVolume] = useState(0)
+  const [volume, setVolume] = useState(1)
   const [delayAmount, setDelayAmount] = useState(0)
   const [distortionAmount, setDistortion] = useState(0)
   const [reverbAmount, setReverbAmount] = useState(0)
