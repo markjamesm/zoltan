@@ -7,7 +7,6 @@ import FormLabel from '@mui/material/FormLabel';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
-import { Col } from 'react-bootstrap';
 
 function SynthEngine() {
 
@@ -15,7 +14,7 @@ function SynthEngine() {
   const [volume, setVolume] = useState(0)
   const [delayAmount, setDelayAmount] = useState(0)
   const [distortionAmount, setDistortion] = useState(0)
-  const [steps, setSteps] = useState([
+  const [steps] = useState([
     ['C3', 'E3', 'A3'],
     null,
     ['C3', 'E3', 'G3', 'B3'],
