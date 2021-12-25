@@ -25,8 +25,7 @@ function SynthEngine() {
         </Track>
       </Song>
 
-      <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-        <Col></Col>
+      <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='Donut'>
         <Donut
           diameter={100}
           min={-50}
@@ -72,7 +71,8 @@ function SynthEngine() {
           <label id={'delay-amount'}>Distortion</label>
         </Donut>
       </Stack>
-
+          <br />
+          <br />
       <button
         style={{
           fontSize: '2rem',

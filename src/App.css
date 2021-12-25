@@ -25,6 +25,14 @@
   margin-bottom: 5vh;
 }
 
+.Donut {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
 .App-link {
   color: #61dafb;
 }

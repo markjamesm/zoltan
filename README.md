@@ -2,6 +2,10 @@
 
 Zoltan is a polyphonic browser-based synthesizer written in Javascript using React. The project is currently in the early alpha stages, so expect breaking changes to be frequent.
 
+## Screenshot
+
+![Zoltan music Synthesizer screenshot](/screenshot.jpg)
+
 ## Available Scripts
 
 In the project directory, you can run:
