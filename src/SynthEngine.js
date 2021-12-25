@@ -147,7 +147,7 @@ function SynthEngine() {
       <br />
       <br />
 
-      <Stack className='CenterAlign'>
+      <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='CenterAlign'>
       <FormControl component="fieldset">
           <FormLabel component="legend">Synth Engine</FormLabel>
           <RadioGroup
