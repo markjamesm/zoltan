@@ -157,12 +157,12 @@ function SynthEngine() {
           >
             <FormControlLabel value="amSynth" control={<Radio onClick={() => setSynthType('amSynth')} />} label="amSynth" />
             <FormControlLabel value="fmSynth" control={<Radio onClick={() => setSynthType('fmSynth')} />} label="fmSynth" />
-            <FormControlLabel value="monoSynth" control={<Radio onClick={() => setSynthType('monoSynth')} />} label="monoSynth" />
+            <FormControlLabel value="duoSynth" control={<Radio onClick={() => setSynthType('duoSynth')} />} label="duoSynth" />
           </RadioGroup>
         </FormControl>
 
         <FormControl component="fieldset">
-          <FormLabel component="oscillators">Oscillator Type</FormLabel>
+          <FormLabel component="legend">Oscillator Type</FormLabel>
           <RadioGroup
             aria-label="synth-engine"
             defaultValue="sine"
