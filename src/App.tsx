@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Zoltan</h1>
-        <H2>A polyphonic Javascript synthesizer</H2>
+        <H2>A polyphonic Typescript synthesizer</H2>
       </header>
       <SynthEngine />
     <Footer />
