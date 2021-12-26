@@ -1,6 +1,6 @@
 # Zoltan
 
-Zoltan is a polyphonic browser-based synthesizer written in Javascript using React. The project is currently in the early alpha stages, so expect breaking changes to be frequent.
+Zoltan is a polyphonic browser-based synthesizer written in Typescript using React. The project is currently in the early alpha stages, so expect breaking changes to be frequent.
 
 ## Live Demo
 
