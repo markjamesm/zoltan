@@ -30,7 +30,6 @@ function SynthEngine() {
   ]);
   const [oscillatorType, setOscillatorType] = useState('sine')
   const [synthType, setSynthType] = useState('fmSynth')
-  const[sequencerButton, setSequencerButtonNumber] = useState({"sequencerButtonNumber":"D1"})
 
   return (
     <>
