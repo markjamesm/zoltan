@@ -12,24 +12,24 @@ function SynthEngine() {
 
   /* Declare state variables */
   const [isPlaying, setIsPlaying] = React.useState(false);
-  const [volume, setVolume] = useState(0)
+  const [volume, setVolume] = useState(1)
   const [delayAmount, setDelayAmount] = useState(0)
   const [distortionAmount, setDistortion] = useState(0)
   const [reverbAmount, setReverbAmount] = useState(0)
   const [autoFilterAmount, setAutoFilterAmount] = useState(0)
   const [tremoloAmount, setTremoloAmount] = useState(0)
   const [steps] = useState([
-    ['C3', 'E3', 'A3'],
+    ['B2', 'A3', 'D4'],
     null,
-    ['C3', 'E3', 'G3', 'B3'],
+    ['F#2', 'E3', 'A3'],
     null,
-    ['C3', 'F3', 'A3'],
+    ['B2', 'A3', 'D4'],
     null,
-    ['D3', 'G3', 'B3'],
+    ['F#2', 'E3', 'A3'],
     null,
   ]);
   const [oscillatorType, setOscillatorType] = useState('sine')
-  const [synthType, setSynthType] = useState('amSynth')
+  const [synthType, setSynthType] = useState('fmSynth')
 
   return (
     <>
@@ -57,7 +57,8 @@ function SynthEngine() {
           step={.25}
           value={tremoloAmount}
           theme={{
-            donutColor: 'darkred'
+            donutColor: 'darkred',
+            donutThickness: 14
           }}
           onValueChange={setTremoloAmount}
           ariaLabelledBy={'tremolo-amount'}
@@ -72,7 +73,8 @@ function SynthEngine() {
           step={.25}
           value={distortionAmount}
           theme={{
-            donutColor: 'red'
+            donutColor: 'red',
+            donutThickness: 14
           }}
           onValueChange={setDistortion}
           ariaLabelledBy={'delay-amount'}
@@ -87,7 +89,8 @@ function SynthEngine() {
           step={.25}
           value={delayAmount}
           theme={{
-            donutColor: 'purple'
+            donutColor: 'purple',
+            donutThickness: 14
           }}
           onValueChange={setDelayAmount}
           ariaLabelledBy={'delay-amount'}
@@ -105,7 +108,8 @@ function SynthEngine() {
           step={.25}
           value={reverbAmount}
           theme={{
-            donutColor: 'orange'
+            donutColor: 'orange',
+            donutThickness: 14
           }}
           onValueChange={setReverbAmount}
           ariaLabelledBy={'reverb'}
@@ -120,7 +124,8 @@ function SynthEngine() {
           step={.25}
           value={autoFilterAmount}
           theme={{
-            donutColor: 'green'
+            donutColor: 'green',
+            donutThickness: 14
           }}
           onValueChange={setAutoFilterAmount}
           ariaLabelledBy={'delay-amount'}
@@ -135,7 +140,8 @@ function SynthEngine() {
           step={1}
           value={volume}
           theme={{
-            donutColor: 'blue'
+            donutColor: 'blue',
+            donutThickness: 14
           }}
           onValueChange={setVolume}
           ariaLabelledBy={'volume'}
@@ -152,7 +158,7 @@ function SynthEngine() {
           <FormLabel component="legend">Synth Engine</FormLabel>
           <RadioGroup
             aria-label="synth-engine"
-            defaultValue="amSynth"
+            defaultValue="fmSynth"
             name="radio-buttons-group"
           >
             <FormControlLabel value="amSynth" control={<Radio onClick={() => setSynthType('amSynth')} />} label="amSynth" />
