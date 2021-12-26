@@ -1,6 +1,6 @@
 # Zoltan
 
-Zoltan is a polyphonic browser-based synthesizer written in Typescript using React. The project is currently in the early alpha stages, so expect breaking changes to be frequent.
+Zoltan is a polyphonic browser-based synthesizer written in TypeScript using React. The project is currently in the early alpha stages, so expect breaking changes to be frequent.
 
 ## Live Demo
 
@@ -34,11 +34,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
