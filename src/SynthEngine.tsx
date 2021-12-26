@@ -92,25 +92,6 @@ function SynthEngine() {
           min={0}
           max={1}
           step={.25}
-          value={delayAmount}
-          theme={{
-            donutColor: 'purple',
-            donutThickness: 14
-          }}
-          onValueChange={setDelayAmount}
-          ariaLabelledBy={'delay-amount'}
-        >
-          <label id={'delay-amount'}>Delay</label>
-        </Donut>
-      </Stack>
-
-      <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='CenterAlign'>
-
-        <Donut
-          diameter={100}
-          min={0}
-          max={1}
-          step={.25}
           value={reverbAmount}
           theme={{
             donutColor: 'orange',
@@ -120,6 +101,24 @@ function SynthEngine() {
           ariaLabelledBy={'reverb'}
         >
           <label id={'reverb'}>Reverb</label>
+        </Donut>
+      </Stack>
+
+      <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='CenterAlign'>
+      <Donut
+          diameter={100}
+          min={0}
+          max={1}
+          step={.25}
+          value={delayAmount}
+          theme={{
+            donutColor: 'purple',
+            donutThickness: 14
+          }}
+          onValueChange={setDelayAmount}
+          ariaLabelledBy={'delay-amount'}
+        >
+          <label id={'delay-amount'}>Delay</label>
         </Donut>
 
         <Donut
