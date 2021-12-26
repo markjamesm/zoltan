@@ -30,6 +30,7 @@ function SynthEngine() {
   ]);
   const [oscillatorType, setOscillatorType] = useState('sine')
   const [synthType, setSynthType] = useState('fmSynth')
+  const[sequencerButton, setSequencerButtonNumber] = useState({"sequencerButtonNumber":"D1"})
 
   return (
     <>
@@ -57,7 +58,8 @@ function SynthEngine() {
           step={.25}
           value={tremoloAmount}
           theme={{
-            donutColor: 'darkred'
+            donutColor: 'darkred',
+            donutThickness: 14
           }}
           onValueChange={setTremoloAmount}
           ariaLabelledBy={'tremolo-amount'}
@@ -72,7 +74,8 @@ function SynthEngine() {
           step={.25}
           value={distortionAmount}
           theme={{
-            donutColor: 'red'
+            donutColor: 'red',
+            donutThickness: 14
           }}
           onValueChange={setDistortion}
           ariaLabelledBy={'delay-amount'}
@@ -87,7 +90,8 @@ function SynthEngine() {
           step={.25}
           value={delayAmount}
           theme={{
-            donutColor: 'purple'
+            donutColor: 'purple',
+            donutThickness: 14
           }}
           onValueChange={setDelayAmount}
           ariaLabelledBy={'delay-amount'}
@@ -105,7 +109,8 @@ function SynthEngine() {
           step={.25}
           value={reverbAmount}
           theme={{
-            donutColor: 'orange'
+            donutColor: 'orange',
+            donutThickness: 14
           }}
           onValueChange={setReverbAmount}
           ariaLabelledBy={'reverb'}
@@ -120,7 +125,8 @@ function SynthEngine() {
           step={.25}
           value={autoFilterAmount}
           theme={{
-            donutColor: 'green'
+            donutColor: 'green',
+            donutThickness: 14
           }}
           onValueChange={setAutoFilterAmount}
           ariaLabelledBy={'delay-amount'}
@@ -135,7 +141,8 @@ function SynthEngine() {
           step={1}
           value={volume}
           theme={{
-            donutColor: 'blue'
+            donutColor: 'blue',
+            donutThickness: 14
           }}
           onValueChange={setVolume}
           ariaLabelledBy={'volume'}
