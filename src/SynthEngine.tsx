@@ -37,8 +37,13 @@ function SynthEngine() {
         <Track
           steps={steps}
           volume={volume}
+
+          // Callback for every step
+          onStepPlay={(step: any, index: any) => {
+            console.log(step, index);
+          }}
         >
-          <Instrument type={synthType} oscillator = {oscillatorType} />
+          <Instrument type={synthType} oscillator={oscillatorType} />
 
           {/* Setup the effect chain */}
           <Effect type="tremolo" wet={tremoloAmount} />
@@ -154,7 +159,7 @@ function SynthEngine() {
       <br />
 
       <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='CenterAlign'>
-      <FormControl component="fieldset">
+        <FormControl component="fieldset">
           <FormLabel component="legend">Synth Engine</FormLabel>
           <RadioGroup
             aria-label="synth-engine"
