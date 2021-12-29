@@ -97,7 +97,7 @@ function SynthEngine() {
       </Stack>
 
       <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='CenterAlign'>
-      <Donut
+        <Donut
           diameter={100}
           min={0}
           max={1}
@@ -178,22 +178,25 @@ function SynthEngine() {
       </Stack>
 
       <Stack alignItems="center">
+          <br />
 
-      <button
+        <button
           style={{
             fontSize: '1.5rem',
           }}
 
           onClick={() => {
-            var generatedSequence = GenerateSequence;
-            setSteps(generatedSequence);
-
+            setSteps(GenerateSequence);
           }}
         >
           {'Generate sequence'}
         </button>
 
-        <br />
+        <p>
+          Current sequence:
+          <br />
+          {steps.join('-')}
+        </p>
 
         <button
           style={{
