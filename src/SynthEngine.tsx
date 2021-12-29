@@ -1,3 +1,4 @@
+import GenerateSequence from './NotesGeneration';
 import React, { useState } from 'react'
 import { Song, Track, Instrument, Effect } from 'reactronica';
 import { Donut } from 'react-dial-knob'
@@ -18,16 +19,7 @@ function SynthEngine() {
   const [reverbAmount, setReverbAmount] = useState(0)
   const [autoFilterAmount, setAutoFilterAmount] = useState(0)
   const [tremoloAmount, setTremoloAmount] = useState(0)
-  const [steps] = useState([
-    ['B2', 'A3', 'D4'],
-    null,
-    ['F#2', 'E3', 'A3'],
-    null,
-    ['B2', 'A3', 'D4'],
-    null,
-    ['F#2', 'E3', 'A3'],
-    null,
-  ]);
+  const [steps, setSteps] = useState([["C3"]]);
   const [oscillatorType, setOscillatorType] = useState('sine')
   const [synthType, setSynthType] = useState('fmSynth')
 
@@ -92,25 +84,6 @@ function SynthEngine() {
           min={0}
           max={1}
           step={.25}
-          value={delayAmount}
-          theme={{
-            donutColor: 'purple',
-            donutThickness: 14
-          }}
-          onValueChange={setDelayAmount}
-          ariaLabelledBy={'delay-amount'}
-        >
-          <label id={'delay-amount'}>Delay</label>
-        </Donut>
-      </Stack>
-
-      <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='CenterAlign'>
-
-        <Donut
-          diameter={100}
-          min={0}
-          max={1}
-          step={.25}
           value={reverbAmount}
           theme={{
             donutColor: 'orange',
@@ -120,6 +93,24 @@ function SynthEngine() {
           ariaLabelledBy={'reverb'}
         >
           <label id={'reverb'}>Reverb</label>
+        </Donut>
+      </Stack>
+
+      <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='CenterAlign'>
+      <Donut
+          diameter={100}
+          min={0}
+          max={1}
+          step={.25}
+          value={delayAmount}
+          theme={{
+            donutColor: 'purple',
+            donutThickness: 14
+          }}
+          onValueChange={setDelayAmount}
+          ariaLabelledBy={'delay-amount'}
+        >
+          <label id={'delay-amount'}>Delay</label>
         </Donut>
 
         <Donut
@@ -188,6 +179,20 @@ function SynthEngine() {
 
       <Stack alignItems="center">
 
+      <button
+          style={{
+            fontSize: '1.5rem',
+          }}
+
+          onClick={() => {
+            setSteps(GenerateSequence);
+          }}
+        >
+          {'Generate sequence'}
+        </button>
+
+        <br />
+
         <button
           style={{
             fontSize: '2rem',
@@ -197,7 +202,7 @@ function SynthEngine() {
             setIsPlaying(!isPlaying);
           }}
         >
-          {isPlaying ? 'Stop' : 'Play sequence'}
+          {isPlaying ? 'Stop' : 'Play'}
         </button>
 
         <br />
