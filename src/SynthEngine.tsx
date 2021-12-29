@@ -13,7 +13,7 @@ function SynthEngine() {
 
   /* Declare state variables */
   const [isPlaying, setIsPlaying] = React.useState(false);
-  const [volume, setVolume] = useState(1)
+  const [volume, setVolume] = useState(-3)
   const [delayAmount, setDelayAmount] = useState(0)
   const [distortionAmount, setDistortion] = useState(0)
   const [reverbAmount, setReverbAmount] = useState(0)
@@ -97,7 +97,7 @@ function SynthEngine() {
       </Stack>
 
       <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className='CenterAlign'>
-      <Donut
+        <Donut
           diameter={100}
           min={0}
           max={1}
@@ -178,8 +178,9 @@ function SynthEngine() {
       </Stack>
 
       <Stack alignItems="center">
+          <br />
 
-      <button
+        <button
           style={{
             fontSize: '1.5rem',
           }}
@@ -191,7 +192,11 @@ function SynthEngine() {
           {'Generate sequence'}
         </button>
 
-        <br />
+        <p>
+          Current sequence:
+          <br />
+          {steps.join('-')}
+        </p>
 
         <button
           style={{
