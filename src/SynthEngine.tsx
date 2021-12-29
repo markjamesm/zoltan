@@ -1,3 +1,4 @@
+import GenerateSequence from './NotesGeneration';
 import React, { useState } from 'react'
 import { Song, Track, Instrument, Effect } from 'reactronica';
 import { Donut } from 'react-dial-knob'
@@ -184,7 +185,7 @@ function SynthEngine() {
           }}
 
           onClick={() => {
-            setSteps(generateSequence);
+            setSteps(GenerateSequence);
           }}
         >
           {'Generate sequence'}
@@ -201,7 +202,7 @@ function SynthEngine() {
             setIsPlaying(!isPlaying);
           }}
         >
-          {isPlaying ? 'Stop' : 'Play sequence'}
+          {isPlaying ? 'Stop' : 'Play'}
         </button>
 
         <br />
@@ -216,45 +217,3 @@ function SynthEngine() {
 }
 
 export default SynthEngine;
-
-
-function generateSequence()
-{
-var sequenceLength = 10;
-
-  var generatedSequence: string[][] = [["A3"]];
-
-  for (let len = 0; len < sequenceLength; len++) 
-  {
-    let random = getRandomInt(5)
-
-    switch (random) {
-      case 0: {
-        generatedSequence.push(["A3"]);
-        break;
-      }
-      case 1: {
-        generatedSequence.push(["C3"]);
-        break;
-      }
-      case 2: {
-        generatedSequence.push(["D3"]);
-        break;
-      }
-      case 3: {
-        generatedSequence.push(["E3"]);
-      }
-      case 4: {
-        generatedSequence.push(["G3"]);
-      }
-      default:
-        generatedSequence.push(["A3"])
-    }
-  }
-
-  return generatedSequence;
-}
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
