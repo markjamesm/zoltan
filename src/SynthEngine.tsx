@@ -19,7 +19,7 @@ function SynthEngine() {
   const [reverbAmount, setReverbAmount] = useState(0)
   const [autoFilterAmount, setAutoFilterAmount] = useState(0)
   const [tremoloAmount, setTremoloAmount] = useState(0)
-  const [steps, setSteps] = useState([["C3"]]);
+  const [steps, setSteps] = useState([["C3"], 1]);
   const [oscillatorType, setOscillatorType] = useState('sine')
   const [synthType, setSynthType] = useState('fmSynth')
 

@@ -1,10 +1,8 @@
-
-
 function GenerateSequence()
 {
 var sequenceLength = 5;
 
-  var generatedSequence: string[][] = [["A3"]];
+  var generatedSequence: [[string], number] = [["A3"], 1];
 
   for (let len = 0; len < sequenceLength; len++) 
   {
@@ -12,27 +10,27 @@ var sequenceLength = 5;
 
     switch (random) {
       case 0: {
-        generatedSequence.push(["A3"]);
+        generatedSequence.push(["A3"], 1);
         break;
       }
       case 1: {
-        generatedSequence.push(["C3"]);
+        generatedSequence.push(["C3"], 1);
         break;
       }
       case 2: {
-        generatedSequence.push(["D3"]);
+        generatedSequence.push(["D3"], 1);
         break;
       }
       case 3: {
-        generatedSequence.push(["E3"]);
+        generatedSequence.push(["E3"], 1);
         break;
       }
       case 4: {
-        generatedSequence.push(["G3"]);
+        generatedSequence.push(["G3"], 1);
         break;
       }
       default:
-        generatedSequence.push(["A3"])
+        generatedSequence.push(["A3"], 1)
         break;
     }
   }
