@@ -13,7 +13,7 @@ function SynthEngine() {
 
   /* Declare state variables */
   const [isPlaying, setIsPlaying] = React.useState(false);
-  const [volume, setVolume] = useState(-3)
+  const [volume, setVolume] = useState(-4)
   const [delayAmount, setDelayAmount] = useState(0)
   const [distortionAmount, setDistortion] = useState(0)
   const [reverbAmount, setReverbAmount] = useState(0)
@@ -154,7 +154,7 @@ function SynthEngine() {
           <FormLabel component="legend">Synth Engine</FormLabel>
           <RadioGroup
             aria-label="synth-engine"
-            defaultValue="fmSynth"
+            defaultValue="duoSynth"
             name="radio-buttons-group"
           >
             <FormControlLabel value="amSynth" control={<Radio onClick={() => setSynthType('amSynth')} />} label="amSynth" />
@@ -167,7 +167,7 @@ function SynthEngine() {
           <FormLabel component="legend">Oscillator Type</FormLabel>
           <RadioGroup
             aria-label="synth-engine"
-            defaultValue="sine"
+            defaultValue="triangle"
             name="radio-buttons-group"
           >
             <FormControlLabel value="sine" control={<Radio onClick={() => setOscillatorType('sine')} />} label="Sine" />
