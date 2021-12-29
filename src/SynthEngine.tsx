@@ -18,16 +18,7 @@ function SynthEngine() {
   const [reverbAmount, setReverbAmount] = useState(0)
   const [autoFilterAmount, setAutoFilterAmount] = useState(0)
   const [tremoloAmount, setTremoloAmount] = useState(0)
-  const [steps] = useState([
-    ['B2', 'A3', 'D4'],
-    null,
-    ['F#2', 'E3', 'A3'],
-    null,
-    ['B2', 'A3', 'D4'],
-    null,
-    ['F#2', 'E3', 'A3'],
-    null,
-  ]);
+  const [steps, setSteps] = useState([["C3"]]);
   const [oscillatorType, setOscillatorType] = useState('sine')
   const [synthType, setSynthType] = useState('fmSynth')
 
@@ -187,6 +178,20 @@ function SynthEngine() {
 
       <Stack alignItems="center">
 
+      <button
+          style={{
+            fontSize: '1.5rem',
+          }}
+
+          onClick={() => {
+            setSteps(generateSequence);
+          }}
+        >
+          {'Generate sequence'}
+        </button>
+
+        <br />
+
         <button
           style={{
             fontSize: '2rem',
@@ -211,3 +216,45 @@ function SynthEngine() {
 }
 
 export default SynthEngine;
+
+
+function generateSequence()
+{
+var sequenceLength = 10;
+
+  var generatedSequence: string[][] = [["A3"]];
+
+  for (let len = 0; len < sequenceLength; len++) 
+  {
+    let random = getRandomInt(5)
+
+    switch (random) {
+      case 0: {
+        generatedSequence.push(["A3"]);
+        break;
+      }
+      case 1: {
+        generatedSequence.push(["C3"]);
+        break;
+      }
+      case 2: {
+        generatedSequence.push(["D3"]);
+        break;
+      }
+      case 3: {
+        generatedSequence.push(["E3"]);
+      }
+      case 4: {
+        generatedSequence.push(["G3"]);
+      }
+      default:
+        generatedSequence.push(["A3"])
+    }
+  }
+
+  return generatedSequence;
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
